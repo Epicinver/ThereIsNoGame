@@ -10,18 +10,22 @@ using namespace geode::prelude;
 
 class $modify(TuffMenuLayer, MenuLayer){
 public:
-    int popupText = 1;
+    struct Fields{
+        int popupText = 1;
+    };
+
     
     bool init(){
-        CCNode* btnNode /*bc c++ FUcking hates me*/ = this->getChildByID("more-games-button");
-        CCMenuItemSpriteExtra* btn = dynamic_cast<CCMenuItemSpriteExtra*>(btnNode);
+        // CCMenu (id: more-games-menu) -> CCMenuItemSpriteExtra (id: more-games-button) -> CCSprite (No ID) so child of ccmenu then child of that, ez right :D:DD::D:D right?/f/f/d//f
+        // im gonna kms
+        CCMenu* moreMenu = static_cast<CCMenu*>(this->getChildByID("more-games-menu"));
+        CCMenuItemSpriteExtra* btnNode = static_cast<CCMenuItemSpriteExtra*>(moreMenu->getChildByID("more-games-button"));
         CCSprite* sprite = CCSprite::create("res/MoreGames.png");
-        if (btn){
-            btn->setSprite(sprite);
-        }
+        btnNode->setSprite(sprite);
+      // hopefully no eror now ;d
+        return true;
     };
     void onMoreGames(CCObject* sender) {
         FLAlertLayer::create("no games lil bro", "There is no game. Do you understand?", "OK")->show();
     };
-    
 };
