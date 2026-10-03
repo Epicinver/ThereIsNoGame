@@ -1,5 +1,6 @@
 #include <Geode/Geode.hpp>
-#include <Geode/binding/MenuLayer.hpp>
+#include <Geode/modify/MenuLayer.hpp>
+
 
 using namespace geode::prelude;
 
@@ -12,13 +13,15 @@ public:
     int popupText = 1;
     
     bool init(){
-        CCMenuItemSpriteExtra* btn = this->getChildByID("more-games-button");
+        CCNode* btnNode /*bc c++ FUcking hates me*/ = this->getChildByID("more-games-button");
+        CCMenuItemSpriteExtra* btn = dynamic_cast<CCMenuItemSpriteExtra*>(btnNode);
         CCSprite* sprite = CCSprite::create("res/MoreGames.png");
-        btn->setNormalImage(sprite);
-
-        void onMoreGames(CCObject* sender) {
-            FLAlertLayer::create("no games lil bro", "There is no game. Do you understand?", "OK")->show();
-        };
+        if (btn){
+            btn->setSprite(sprite);
+        }
+    };
+    void onMoreGames(CCObject* sender) {
+        FLAlertLayer::create("no games lil bro", "There is no game. Do you understand?", "OK")->show();
     };
     
 };
