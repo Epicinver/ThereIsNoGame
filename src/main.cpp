@@ -16,20 +16,19 @@ public:
     };
     void onMoreGames(CCObject* sender) {
         if (m_fields->popupText==1){
-            FLAlertLayer::create("no games lil bro", "There is no game. Do you understand?", "OK")->show();
+            FLAlertLayer::create("no games lil bro", "There is no more games. Sorry!", "OK")->show();
             m_fields->popupText++;
         } else if (m_fields->popupText==2){
-            FLAlertLayer::create("This isnt funny", "There is no game. I've told you this. Stop trying.", "OK")->show();
+            FLAlertLayer::create("This isnt funny", "There is no other games. I've told you this. Stop trying.", "OK")->show();
             m_fields->popupText++;
         } else if (m_fields->popupText==3){
             FLAlertLayer::create("Stop", "There will never be more games. Do you want me to crash your game? Do this again and I will.", "OK")->show();
             m_fields->popupText++;
         } else if (m_fields->popupText==4){
-            FLAlertLayer::create("I warned you", "Stop it. This is your last chance.", "OK")->show();
+            FLAlertLayer::create("I warned you", "Stop it. This is your last chance. Do it again and your game goes bye bye!", "OK")->show();
             m_fields->popupText++;
         } else if (m_fields->popupText==5){
-            FLAlertLayer::create("You asked for it", "You have been warned. Goodbye.", "OK")->show();
-            std::this_thread::sleep_for(std::chrono::seconds(4));
+            std::this_thread::sleep_for(std::chrono::seconds(1));
             m_fields->popupText = 1;
             exit(0);
         }
