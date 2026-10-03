@@ -1,6 +1,7 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/MenuLayer.hpp>
-
+#include <thread>
+#include <chrono>
 
 using namespace geode::prelude;
 
@@ -28,6 +29,7 @@ public:
             m_fields->popupText++;
         } else if (m_fields->popupText==5){
             FLAlertLayer::create("You asked for it", "You have been warned. Goodbye.", "OK")->show();
+            std::this_thread::sleep_for(std::chrono::seconds(4));
             m_fields->popupText = 1;
             exit(0);
         }
