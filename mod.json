@@ -12,7 +12,7 @@
 	"developer": "Parasocial",
 	"description": "There is no game. Do you understand?",
 	"dependencies": {
-		"geode.node-ids": ">=v1.23.3"
+			"geode.node-ids": ">=v1.23.3"
 	},
 	"resources":{
 		"sprites": [
