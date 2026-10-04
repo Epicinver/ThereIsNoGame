@@ -8,7 +8,7 @@
 	},
 	"id": "parasocial.no-game",
 	"name": "There Is No Game",
-	"version": "v1.0.0",
+	"version": "v1.1.0",
 	"developer": "Parasocial",
 	"description": "There is no game. Do you understand?",
 	"dependencies": {
@@ -17,6 +17,9 @@
 	"resources":{
 		"sprites": [
 			"res/MoreGames.png"
+		],
+		"files": [
+			"res/*.mp3"
 		]
 	}
 }
