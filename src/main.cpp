@@ -41,7 +41,8 @@ public:
             FMODAudioEngine::get()->playEffect(sfxpaaaaath.string());
             FLAlertLayer::create("Just stop", "Please? I won't crash your game. Please. I'm begging you. Just stop clicking the button. There are NO MORE GAMES. I'll even say it out loud for you", "alr fine")->show();
             m_fields->popupText = 1;
-            auto sfxpaaaaath = geode::Mod::get()->getResourcesDir() / "nomore.mp3";
+            auto sfxpaaaaaath = geode::Mod::get()->getResourcesDir() / "nomore.mp3";
+            FMODAudioEngine::get()->playEffect(sfxpaaaaaath.string());
         }
     };
 };
