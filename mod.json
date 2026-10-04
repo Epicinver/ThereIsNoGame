@@ -26,5 +26,9 @@
 			"res/saywallahi.mp3",
 			"res/nomore.mp3"
 		]
-	}
+	},
+	"tags": [
+		"joke",
+		"offline"
+	]
 }
