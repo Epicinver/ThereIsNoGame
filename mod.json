@@ -19,7 +19,12 @@
 			"res/MoreGames.png"
 		],
 		"files": [
-			"res/breh.mp3"
+			"res/stopit.mp3",
+			"res/breh.mp3",
+			"res/huh.mp3",
+			"res/fart.mp3",
+			"res/saywallahi.mp3",
+			"res/nomore.mp3"
 		]
 	}
 }
